@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="BDD Test Suite">
-    <test name="Login and Update Profile Test" >
+    <test name="Free CRM test" annotations="JDK"	preserve-order="true" >
         <classes>
-            <class name="BDD/src/main/java/runner/RunnerTestCase"/>
+            <class name="runner.RunnerTestCase"/>
         </classes>
     </test>
 </suite>

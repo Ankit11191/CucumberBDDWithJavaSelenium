@@ -1,6 +1,7 @@
 package baseClasses;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class FindElement {
@@ -41,12 +42,17 @@ public class FindElement {
 
 	public static void Click(String element)
 	{
-		FindElement.elementType(ReadFromProperties.PageElementValue(element)).click();
+		JavascriptExecutor js= (JavascriptExecutor) DriverLaunch.driverReturn();
+		js.executeScript("arguments[0].click();", FindElement.elementType(ReadFromProperties.PageElementValue(element)));
+		//FindElement.elementType(ReadFromProperties.PageElementValue(element)).click();
 	}
 	public static void sendKeys(String element, String Value)
 	{
 		FindElement.elementType(ReadFromProperties.PageElementValue(element)).sendKeys(Value);
 	}
 	
-
+	public static WebElement webElement(String element)
+	{
+		return FindElement.elementType(ReadFromProperties.PageElementValue(element));
+	}
 }
