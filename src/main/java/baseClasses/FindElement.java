@@ -44,14 +44,12 @@ public class FindElement {
 	{
 		JavascriptExecutor js= (JavascriptExecutor) DriverLaunch.driverReturn();
 		js.executeScript("arguments[0].click();", FindElement.elementType(ReadFromProperties.PageElementValue(element)));
+		FindElement.elementType(ReadFromProperties.PageElementValue(element)).click();
 	}
 	public static void sendKeys(String element, String Value)
 	{
 		FindElement.elementType(ReadFromProperties.PageElementValue(element)).sendKeys(Value);
 	}
 	
-	public static WebElement webElement(String element)
-	{
-		return FindElement.elementType(ReadFromProperties.PageElementValue(element));
-	}
+
 }
