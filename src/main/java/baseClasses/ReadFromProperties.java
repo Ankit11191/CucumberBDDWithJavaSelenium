@@ -7,8 +7,8 @@ import java.util.Properties;
 
 public class ReadFromProperties {
 
-	public Properties properties=new Properties();
-	Properties reading(String BaseClasses)
+	public static Properties properties=new Properties();
+	public static Properties reading(String BaseClasses)
 	{
 		URL url=new Object() { }.getClass().getClassLoader().getResource(BaseClasses);
 		try {
@@ -38,10 +38,7 @@ public class ReadFromProperties {
 	}
 	public static String[] PageElementValue(String ElemantName)
 	{
-		ReadFromProperties reading=new ReadFromProperties();
-		String[] split = reading.reading("\\PageElements").getProperty(ElemantName).split("=");
-		System.out.println(split[0]+"----------"+split[1]);
-		return reading.reading("\\PageElements").getProperty(ElemantName).split("=",2);
+		return reading("\\PageElements").getProperty(ElemantName).split("=",2);
 	}
 	
 	public static void main(String[] args) {
